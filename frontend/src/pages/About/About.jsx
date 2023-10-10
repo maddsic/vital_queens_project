@@ -1,9 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { images } from "../../constants";
 import wrapper from "../../Wrapper/wrapper";
 import { motion } from "framer-motion";
+import { useState } from "react";
+
+import { urlFor, client } from "../../client";
 
 const About = () => {
+   const [galaryData, setGalaryData] = useState([]);
+
+   useEffect(() => {
+      getGalaryData();
+   }, []);
+
+   const getGalaryData = async () => {
+      const query = '*[_type == "galary" ]';
+
+      // Now we using our client to fetch data from the backend
+      try {
+         await client.fetch(query).then(data => {
+            console.log(data);
+            setGalaryData(data);
+         });
+      } catch (error) {
+         console.log(error);
+      }
+   };
+
    return (
       <div className="py-[5%]">
          <div className="w-[60%] mx-auto ">
