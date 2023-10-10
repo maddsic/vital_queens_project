@@ -5,7 +5,7 @@ const Story = () => {
     <section className="story-container mt-14 mb-20 py-8">
       <div className="grid grid-cols-2 gap-7">
         <div className="flex flex-col items-center">
-          <h1 className="font-semibold text-3xl  text-red-600">Our Story</h1>
+          <h1 className="font-semibold text-4xl  text-red-600">Our Story</h1>
           <p className="py-12 text-gray-500">
             We combine taste and quality to serve you a delightful array of
             mouthwatering dishes, crafted with passion and made to perfection.

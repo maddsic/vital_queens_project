@@ -9,7 +9,9 @@ const Services = () => {
       <div className="flex gap-10 justify-center items-center">
         <div className="flex flex-col items-center">
           <img className="h-24" src={dinning} alt="dinner" />
-          <h1 className="pt-2 mt-2 font-extrabold text-xl">Dine in</h1>
+          <h1 className="pt-2 mt-2 font-extrabold text-xl text-red-600">
+            Dine in
+          </h1>
           <p className="text-center text-gray-500 my-2 text-[15px]">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
             Reprehenderit, velit,
@@ -17,7 +19,9 @@ const Services = () => {
         </div>
         <div className="flex flex-col items-center">
           <img className="h-24" src={takeAway} alt="takeAway" />
-          <h1 className="pt-2 mt-2 font-extrabold text-xl">Take Away</h1>
+          <h1 className="pt-2 mt-2 font-extrabold text-xl text-red-600">
+            Take Away
+          </h1>
           <p className="text-center text-gray-500 my-2 text-[15px]">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
             Reprehenderit, velit,
@@ -25,7 +29,9 @@ const Services = () => {
         </div>
         <div className="flex flex-col items-center">
           <img className="h-24" src={delivery} alt="delivery" />
-          <h1 className="pt-2 mt-2 font-extrabold text-xl">Home Delivery</h1>
+          <h1 className="pt-2 mt-2 font-extrabold text-xl text-red-600">
+            Home Delivery
+          </h1>
           <p className="text-center text-gray-500 my-2 text-[15px]">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
             Reprehenderit, velit,
