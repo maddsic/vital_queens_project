@@ -2,11 +2,13 @@ import React from "react";
 
 const Menu = () => {
   return (
-    <section className="menu bg-dark text-white   mt-32">
+    <section className="menu bg-dark text-white   mt-32 font-blink">
       <div className=" mx-auto ">
         <div className="grid grid-cols-2">
           <div className="py-6 px-4 w-[400px] mx-auto">
-            <h2 className="menu__title text-red-600  mt-20">Restaurant</h2>
+            <h2 className="menu__title font-dancing text-red-600  mt-20">
+              Restaurant
+            </h2>
             <h1 className="font-bold text-3xl text-white mt-4">Menu</h1>
             <div className="grid grid-cols-2 gap-10 mt-8">
               <div c>

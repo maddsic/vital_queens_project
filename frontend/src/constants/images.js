@@ -7,11 +7,11 @@ import pic6 from "../assets/images/pic6.jpg";
 import pic7 from "../assets/images/pic7.jpg";
 
 export default {
-   pic,
-   pic2,
-   pic3,
-   pic4,
-   pic5,
-   pic6,
-   pic7,
+  pic,
+  pic2,
+  pic3,
+  pic4,
+  pic5,
+  pic6,
+  pic7,
 };

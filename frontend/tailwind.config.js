@@ -5,6 +5,8 @@ module.exports = {
     extend: {
       fontFamily: {
         nunito: ["nunito", "sans-serif"],
+        blink:
+          "BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica,   Arial sans-serif",
       },
       colors: {
         dark: "#000000f2;",
