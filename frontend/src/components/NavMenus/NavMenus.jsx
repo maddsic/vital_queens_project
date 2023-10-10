@@ -10,24 +10,27 @@ const NavMenus = () => {
    return (
       <>
          <div className={`flex items-center gap-20 mr-[2rem]`}>
-            <ul className="hidden lg:flex flex-1 justify-center align-center">
+            <ul className="hidden lg:flex flex-1 justify-center align-center text-center">
                {navLinks.map(navlink => (
-                  <li className="my-0 mx-[1rem]">
-                     <a
-                        href={`#${navlink}`}
-                        className="uppercase text-sm transition-all hover:text-red-900"
-                     >
-                        {navlink}
-                     </a>
-                  </li>
+                  <>
+                     <li className="my-0 mx-[1rem]" key={navlink}>
+                        {/* <div className="w-[5px] h-[5px] bg-red-500 rounded-full text-center" /> */}
+                        <a
+                           href={`#${navlink}`}
+                           className="uppercase text-sm transition-all hover:text-red-900"
+                        >
+                           {navlink}z
+                        </a>
+                     </li>
+                  </>
                ))}
             </ul>
 
             {/* BOOK EVENT */}
             <motion.button
-               initial={{ x: 250 }}
+               initial={{ x: 350 }}
                animate={{ x: 4 }}
-               transition={{ delay: 0.1, duration: 1, type: "spring" }}
+               transition={{ delay: 2, duration: 2, type: "spring" }}
                data-modal-target="defaultModal"
                data-modal-toggle="defaultModal"
                type="button"

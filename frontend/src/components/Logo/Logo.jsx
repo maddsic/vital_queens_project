@@ -12,7 +12,7 @@ const Logo = () => {
       <motion.div
          initial={{ y: -250 }}
          animate={{ y: 4 }}
-         transition={{ delay: 0.1, duration: 1, type: "spring" }}
+         transition={{ delay: 2, duration: 2, type: "spring" }}
          className="flex flex-1 gap-2"
       >
          <h1 className="cursor-pointer text-red-700">
