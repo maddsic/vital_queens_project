@@ -34,26 +34,15 @@ const Hero = () => {
 
    const goToNext = currentState => setCurrentState(currentState);
    return (
-      <div className="h-screen relative">
-         <motion.div style={bgImageStyle} />
-         <div className="transparent_bg w-full h-screen absolute z-[998] top-0 left-0"></div>
-
-         <motion.div
-            initial={{ x: -1000 }}
-            animate={{ x: 0 }}
-            transition={{ delay: 2, duration: 3.5, type: "spring" }}
-            className="description w-[300px] md:w-[450px] lg:w-[600px] absolute z-[999] text-blue-100 top-[20%] left-[20%] bg-gradient-to-t from-bg-gray-900 to-red-700"
-         >
-            <div className="text-center">
-               <h1 className="text-lg lg:text-5xl font-semibold mb-10">
-                  {imagesSlide[currentState].title}
-               </h1>
-               <motion.p
-                  initial={{ y: 250 }}
-                  animate={{ y: 4 }}
-                  transition={{ delay: 1.5, duration: 1.5, type: "spring" }}
-                  className="lg:text-3xl font-medium"
-               >
+    <section className="w-full bg-black h-screen text-white px-16 ">
+      {/* <div className="flex justify-center items-center h-full"> */}
+      <div className="mt-20">
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={3}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
                   {imagesSlide[currentState].body}
                </motion.p>
             </div>
