@@ -5,8 +5,8 @@ import delivery from "../../assets/images/section-svgs/delivery.svg";
 
 const Services = () => {
   return (
-    <section className="services-container  py-16 mt-10">
-      <div className="flex gap-10 justify-center items-center">
+    <section className="services-container  py-16 mt-10" id="service">
+      <div className="grid md:grid-cols-3  gap-10 justify-center items-center">
         <div className="flex flex-col items-center">
           <img className="h-24" src={dinning} alt="dinner" />
           <h1 className="pt-2 mt-2 font-extrabold text-xl text-red-600">

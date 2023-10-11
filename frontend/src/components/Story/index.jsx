@@ -2,8 +2,8 @@ import React from "react";
 import whyUs from "../../assets/images/s2.png";
 const Story = () => {
   return (
-    <section className="story-container mt-14 mb-20 py-8">
-      <div className="grid grid-cols-2 gap-6">
+    <section className="story-container mt-14 mb-20 py-8" id="story">
+      <div className="grid lg:grid-cols-2 gap-6">
         <div className="flex flex-col items-center">
           <h1 className="font-semibold text-4xl  text-red-600">Our Story</h1>
           <p className="py-12 text-gray-500">
@@ -24,8 +24,12 @@ const Story = () => {
             <li>Delightful Food</li>
           </ul>
         </div>
-        <div>
-          <img src={whyUs} alt="story-img" className="rounded-lg" />
+        <div className="w-full mt-8 lg:mt-0">
+          <img
+            src={whyUs}
+            alt="story-img"
+            className="rounded-lg h-full w-full"
+          />
         </div>
       </div>
     </section>

@@ -6,7 +6,7 @@ import pic5 from "../assets/images/pic5.jpg";
 import pic6 from "../assets/images/pic6.jpg";
 import pic7 from "../assets/images/pic7.jpg";
 
-export default {
+const images = {
   pic,
   pic2,
   pic3,
@@ -15,3 +15,5 @@ export default {
   pic6,
   pic7,
 };
+
+export default images;

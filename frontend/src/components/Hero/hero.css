@@ -1,7 +1,13 @@
 .transparent_bg {
-   background-image: linear-gradient(
+  /* background-image: linear-gradient(
       to top,
       rgba(255, 0, 0, 0),
       rgb(12, 12, 12)
-   );
+   ); */
+
+  background-image: linear-gradient(
+    to top,
+    rgba(10, 8, 8, 0.829),
+    rgba(10, 8, 8, 0.829)
+  );
 }

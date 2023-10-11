@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 
-const navLinks = ["home", "about", "menu", "gallary", "contact"];
+const navLinks = ["home", "about", "menu", "gallery", "contact"];
 
 const NavMenus = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
     <>
-      <div className={`flex items-center gap-20 mr-[2rem]`}>
+      <div className={`flex items-center gap-20 `}>
         <ul className="hidden lg:flex flex-1 justify-center align-center">
           {navLinks.map((navlink, index) => (
             <li className="my-0 mx-[1rem]" key={index}>

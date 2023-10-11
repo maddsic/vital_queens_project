@@ -1,10 +1,10 @@
 import React from "react";
-
+// import {} from "@heroicons/react/20/solid"
 const Footer = () => {
   return (
     <footer className="bg-black text-gray-200 text-[15px] py-12">
-      <div className="mx-auto max-w-7xl px-16">
-        <div className="grid grid-cols-4 gap-4 py-7">
+      <div className="main__content">
+        <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-6 sm:gap-5 md:gap-4 py-7">
           <div className="footer__description">
             <p>
               Chef Taylor Bonnyman, working in collaboration with Head Chef
@@ -14,29 +14,29 @@ const Footer = () => {
           <div className="footer_links">
             <ul className="flex flex-col gap-2 ">
               <li>
-                <a href="#">HOME</a>
+                <a href="#home">HOME</a>
               </li>
               <li>
-                <a href="#">MENU</a>
+                <a href="#home">MENU</a>
               </li>
               <li>
-                <a href="#">RESERVATION</a>
+                <a href="#home">RESERVATION</a>
               </li>
               <li>
-                <a href="#">SHOP</a>
+                <a href="#home">SHOP</a>
               </li>
               <li>
-                <a href="#">NEWS</a>
+                <a href="#home">NEWS</a>
               </li>
               <li>
-                <a href="#">CONTACT</a>
+                <a href="#home">CONTACT</a>
               </li>
             </ul>
           </div>
           <div className="footer__social_links">
             <div>
               <a
-                href="#"
+                href="#home"
                 className="border border-red-600 py-2 px-4 text-red-500"
               >
                 Online reservation
@@ -45,7 +45,7 @@ const Footer = () => {
             <h4 className="mt-4 text-lg">Follow</h4>
           </div>
           <div className="footer__address">
-            <ul>
+            <ul className="flex flex-col gap-3">
               <li>+4 1800 555 1234</li>
               <li>BOOKATABLE@RESTAURANT.COM</li>
 

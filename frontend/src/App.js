@@ -10,13 +10,15 @@ import Banner from "./components/Banner";
 import Gallery from "./components/Gallery";
 import Subscription from "./components/Subscription";
 import Footer from "./components/Footer";
+import Hero from "./components/Hero/Hero";
 
 function App() {
   return (
-    <div className="app bg-white">
+    <div className="app bg-white font-blink">
       <Header />
       {/* <About /> */}
-      <div className="max-w-7xl mx-auto lg:px-16 font-blink">
+      <Hero />
+      <div className="main__content ">
         <Services />
         <Story />
       </div>

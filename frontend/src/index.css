@@ -36,3 +36,7 @@
   background-size: cover;
   background-attachment: scroll;
 }
+
+.main__content {
+  @apply max-w-7xl mx-auto px-14 lg:px-16;
+}
