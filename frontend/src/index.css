@@ -1,22 +1,42 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-   box-sizing: border-box;
-   padding: 0;
-   margin: 0;
-   scroll-behavior: smooth;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
 }
 
 .header__font {
-   font-family: "Niconne", cursive;
-   font-size: 2.5rem;
+  font-family: "Niconne", cursive;
+  font-size: 2.5rem;
 }
 
 .sub__header-font {
-   font-family: "Fjalla One", sans-serif;
-   /* font-family: "Niconne", cursive; */
+  font-family: "Fjalla One", sans-serif;
+  /* font-family: "Niconne", cursive; */
+}
+
+.menu__title,
+.subscribe__title {
+  font-family: "Dancing Script", "cursive", Helvetica, Arial, sans-serif;
+  font-size: 70px;
+  line-height: 70px;
+}
+
+.menu__img {
+  background-image: url(https://demos.hogash.com/dannys/wp-content/uploads/sites/4/2017/05/img_03.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: scroll;
+}
+
+.main__content {
+  @apply max-w-7xl mx-auto px-14 lg:px-16;
 }

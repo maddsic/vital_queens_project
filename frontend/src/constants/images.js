@@ -6,12 +6,14 @@ import pic5 from "../assets/images/pic5.jpg";
 import pic6 from "../assets/images/pic6.jpg";
 import pic7 from "../assets/images/pic7.jpg";
 
-export default {
-   pic,
-   pic2,
-   pic3,
-   pic4,
-   pic5,
-   pic6,
-   pic7,
+const images = {
+  pic,
+  pic2,
+  pic3,
+  pic4,
+  pic5,
+  pic6,
+  pic7,
 };
+
+export default images;
