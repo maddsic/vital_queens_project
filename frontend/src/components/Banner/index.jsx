@@ -30,7 +30,7 @@ const Banner = () => {
             </div>
             <div class="w-full  bg-orange-500 h-[249px] flex items-center relative top-0 left-auto">
               <img src={bannerImgOne} alt="" class="h-[249px] " />
-              <div className="absolute  md:left-[260px] top-16">
+              <div className="absolute  left-[240px] md:left-[260px] top-16">
                 <div className="flex flex-col text-xl font-semibold">
                   <span>Fast</span>
                   <span>Delivery</span>
