@@ -15,9 +15,30 @@ const Header = () => {
               <span className="text-3xl">V</span>ital
             </h1>
           </div>
-          <NavMenus />
-        </div>
-      </nav>
+
+              {/* HAMBURGER MENU */}
+              <div className="block lg:hidden">
+                <MdClose size={27} />
+              </div>
+            </div>
+            <div className="nav__items px-8">
+              <ul className="  lg:hidden flex flex-col mt-16  justify-center align-center">
+                {navLinks.map((navlink, index) => (
+                  <li className="py-2" key={index}>
+                    <a
+                      href={`#${navlink}`}
+                      className="uppercase text-sm transition-all hover:text-red-900"
+                    >
+                      {navlink}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <button className=" mt-4 lg:block text-sm font-semibold px-6 py-2 bg-red-700 shadow-lg hover:bg-red-600 rounded-md text-white cursor-pointer">
+                RESERVATIONS
+              </button>
+            </div>
+          </nav>
     </header>
   );
 };
