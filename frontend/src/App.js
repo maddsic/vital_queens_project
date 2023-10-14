@@ -1,33 +1,23 @@
-// import About from "./pages/About/About";
-// import Container from "./components/Container/Container";
-import Header from "./components/Header/Header";
+import About from "./pages/About/About";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
 import "./index.css";
-import Services from "./components/Services";
-import Story from "./components/Story";
-import Menu from "./components/Menu";
-import Dishes from "./components/Dishes";
-import Banner from "./components/Banner";
-import Gallery from "./components/Gallery";
-import Subscription from "./components/Subscription";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero/Hero";
+import Menu from "./pages/Menu";
+import Gallery from "./pages/Gallery";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
     <div className="app relative top-0 w-full bg-white font-blink">
-      <Header />
-      {/* <About /> */}
-      <Hero />
-      <div className="main__content ">
-        <Services />
-        <Story />
-      </div>
-      <Menu />
-      <Dishes />
-      <Banner />
-      <Gallery />
-      <Subscription />
-      <Footer />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

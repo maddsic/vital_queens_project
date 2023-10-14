@@ -3,10 +3,13 @@ import React, { useState } from "react";
 // import Navbar from "../Navbar/Navbar";
 // import Hero from "../Hero/Hero";
 import { MdMenu, MdClose } from "react-icons/md";
+import { navLinks } from "../navLists";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   //   return <Navbar />;
-  const navLinks = ["home", "about", "menu", "gallery", "contact"];
+  // const navLinks = ["home", "about", "menu", "gallery", "contact"];
+
   const [toggle, setToggle] = useState(false);
 
   const showModal = () => setToggle((prev) => !prev);
@@ -23,17 +26,20 @@ const Header = () => {
           </div>
 
           <ul className="hidden lg:flex flex-1 justify-center align-center">
-            {navLinks.map((navlink, index) => (
+            {navLinks.map(({ name, path }, index) => (
               <li className="my-0 mx-[1rem]" key={index}>
-                <a
-                  href={`#${navlink}`}
+                <Link
+                  to={path}
                   className="uppercase text-sm transition-all hover:text-red-900"
                 >
-                  {navlink}
-                </a>
+                  {name}
+                </Link>
               </li>
             ))}
           </ul>
+          <button className="hidden  lg:block text-sm font-semibold px-6 py-2 bg-red-700 shadow-lg hover:bg-red-600 rounded-md text-white cursor-pointer">
+            RESERVATIONS
+          </button>
           {/* HAMBURGER MENU */}
           <div className="block lg:hidden">
             <MdMenu size={27} className="cursor-pointer" onClick={showModal} />
@@ -44,7 +50,7 @@ const Header = () => {
       <div
         className={
           toggle
-            ? " mobile__nav__menu  block w-full h-screen absolute top-0  z-[999] "
+            ? " mobile__nav__menu lg:hidden block w-full h-screen absolute top-0  z-[999] "
             : "hidden"
         }
       >
@@ -69,14 +75,14 @@ const Header = () => {
             </div>
             <div className="nav__list px-4 xs:px-6 sm:px-16 md:px-24">
               <ul className="  lg:hidden  mt-16 ">
-                {navLinks.map((navlink, index) => (
+                {navLinks.map(({ name, path }, index) => (
                   <li className="py-3" key={index}>
-                    <a
-                      href={`#${navlink}`}
-                      className="uppercase text-[15px] font-semibold transition-all hover:text-red-700"
+                    <Link
+                      to={path}
+                      className="uppercase text-base font-semibold transition-all hover:text-red-700"
                     >
-                      {navlink}
-                    </a>
+                      {name}
+                    </Link>
                   </li>
                 ))}
               </ul>

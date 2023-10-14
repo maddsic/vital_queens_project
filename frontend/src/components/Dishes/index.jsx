@@ -7,7 +7,7 @@ const index = () => {
         <h1 className="font-semibold text-4xl  text-center uppercase text-red-600  py-1">
           Our Dishes{" "}
         </h1>
-        <div className="dish__content  flex justify-center flex-wrap gap-4 xs:gap-5 sm:gap-7 w-full py-10 mt-14">
+        <div className="dish__content pb-16  flex justify-center flex-wrap gap-4 xs:gap-5 sm:gap-7 w-full pt-10 mt-14">
           {items.map(({ image, title, price, description }, index) => (
             <div
               key={index}

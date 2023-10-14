@@ -41,8 +41,8 @@ const Hero = () => {
         // className="description w-full absolute z-[999] text-blue-100 top-[20%] left-[20%] bg-gradient-to-t from-bg-gray-900 to-red-700"
         className="description w-full absolute top-0 z-50 flex flex-col justify-center h-full items-center text-blue-100  bg-gradient-to-t from-bg-gray-900 to-red-700"
       >
-        <div className="text-center">
-          <h1 className="text-xl text-red-600 sm:text-3xl md:text-5xl font-semibold mb-10">
+        <div className="xs:px-6 sm:px-12 md:px-16 lg:px-0 max-w-4xl mt-4">
+          <h1 className=" text-white text-3xl md:text-6xl font-bold mb-10">
             {imagesSlide[currentState].title}
           </h1>
           <motion.p

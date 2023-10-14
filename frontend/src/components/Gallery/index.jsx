@@ -6,7 +6,7 @@ const Gallery = () => {
     <section className="gallery-section mt-8 pt-8" id="gallery">
       <div className="main__content pb-8">
         <div>
-          <h1 className="font-semibold text-4xl  text-center mt-10 text-red-600 my-2 py-1">
+          <h1 className="font-semibold text-4xl uppercase text-center mt-10 text-red-600 my-2 py-1">
             Our Gallery
           </h1>
           <p className="mt-2 text-gray-600 text-center ">

@@ -1,5 +1,4 @@
-import React from "react";
-// import {} from "@heroicons/react/20/solid"
+import { BsFacebook, BsInstagram, BsTwitter, BsLinkedin } from "react-icons/bs";
 const Footer = () => {
   return (
     <footer className="bg-black text-gray-200 text-[15px] py-12">
@@ -43,6 +42,28 @@ const Footer = () => {
               </a>
             </div>
             <h4 className="mt-4 text-lg">Follow</h4>
+            <ul className="flex mt-3 gap-4">
+              <li>
+                <a href="#home">
+                  <BsFacebook size={28} />
+                </a>
+              </li>
+              <li>
+                <a href="#home">
+                  <BsInstagram size={28} />
+                </a>
+              </li>
+              <li>
+                <a href="#home">
+                  <BsTwitter size={28} />
+                </a>
+              </li>
+              <li>
+                <a href="#home">
+                  <BsLinkedin size={28} />
+                </a>
+              </li>
+            </ul>
           </div>
           <div className="footer__address">
             <ul className="flex flex-col gap-3">
@@ -53,6 +74,10 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+
+        <p className="text-sm py-2 text-center text-gray-100">
+          copyright &copy; All right reserverd
+        </p>
       </div>
     </footer>
   );
