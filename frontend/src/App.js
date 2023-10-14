@@ -14,7 +14,7 @@ import Hero from "./components/Hero/Hero";
 
 function App() {
   return (
-    <div className="app bg-white font-blink">
+    <div className="app relative top-0 w-full bg-white font-blink">
       <Header />
       {/* <About /> */}
       <Hero />

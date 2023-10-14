@@ -1,33 +1,79 @@
-import React from "react";
-import NavMenus from "../NavMenus/NavMenus";
+import React, { useState } from "react";
+// import NavMenus from "../NavMenus/NavMenus";
 // import Navbar from "../Navbar/Navbar";
 // import Hero from "../Hero/Hero";
+import { MdMenu, MdClose } from "react-icons/md";
 
 const Header = () => {
   //   return <Navbar />;
+  const navLinks = ["home", "about", "menu", "gallery", "contact"];
+  const [toggle, setToggle] = useState(false);
+
+  const showModal = () => setToggle((prev) => !prev);
+
   return (
-    <header className="bg-white fixed z-[999] top-0 w-full shadow-md py-3">
-      <nav className="max-w-7xl mx-auto px-16 py-2">
+    <header className="bg-white fixed z-[990] top-0 w-full shadow-md py-3">
+      <nav className="max-w-7xl px-4 xs:px-6 sm:px-16 md:px-24 mx-auto py-2">
         <div className="flex justify-between items-center">
           <div className="logo">
             <h1 className="cursor-pointer text-red-700">
-              <span className="text-3xl">Q</span>ueen{" "}
-              <span className="text-3xl">V</span>ital
+              <span className="text-3xl leading-3">Q</span>ueen{" "}
+              <span className="text-3xl leading-3">V</span>ital
             </h1>
           </div>
 
+          <ul className="hidden lg:flex flex-1 justify-center align-center">
+            {navLinks.map((navlink, index) => (
+              <li className="my-0 mx-[1rem]" key={index}>
+                <a
+                  href={`#${navlink}`}
+                  className="uppercase text-sm transition-all hover:text-red-900"
+                >
+                  {navlink}
+                </a>
+              </li>
+            ))}
+          </ul>
+          {/* HAMBURGER MENU */}
+          <div className="block lg:hidden">
+            <MdMenu size={27} className="cursor-pointer" onClick={showModal} />
+          </div>
+        </div>
+      </nav>
+      {/* MOBILE NAV MENU*/}
+      <div
+        className={
+          toggle
+            ? " mobile__nav__menu  block w-full h-screen absolute top-0  z-[999] "
+            : "hidden"
+        }
+      >
+        <div className="w-[95%] bg-white h-full ml-auto ">
+          <nav className="">
+            <div className="flex w-full px-4 xs:px-6 sm:px-16 md:px-24  p py-5 shadow-xl  justify-between">
+              <div className="logo">
+                <h1 className="cursor-pointer text-red-700">
+                  <span className="text-3xl leading-3">Q</span>ueen{" "}
+                  <span className="text-3xl leading-3">V</span>ital
+                </h1>
+              </div>
+
               {/* HAMBURGER MENU */}
               <div className="block lg:hidden">
-                <MdClose size={27} />
+                <MdClose
+                  size={27}
+                  className="cursor-pointer"
+                  onClick={showModal}
+                />
               </div>
             </div>
-            <div className="nav__items px-8">
-              <ul className="  lg:hidden flex flex-col mt-16  justify-center align-center">
+            <div className="nav__list px-4 xs:px-6 sm:px-16 md:px-24">
+              <ul className="  lg:hidden  mt-16 ">
                 {navLinks.map((navlink, index) => (
-                  <li className="py-2" key={index}>
+                  <li className="py-3" key={index}>
                     <a
                       href={`#${navlink}`}
-                      className="uppercase text-sm transition-all hover:text-red-900"
+                      className="uppercase text-[15px] font-semibold transition-all hover:text-red-700"
                     >
                       {navlink}
                     </a>
@@ -39,6 +85,8 @@ const Header = () => {
               </button>
             </div>
           </nav>
+        </div>
+      </div>
     </header>
   );
 };

@@ -12,6 +12,10 @@
   scroll-behavior: smooth;
 }
 
+body {
+  @apply overflow-x-hidden;
+}
+
 .header__font {
   font-family: "Niconne", cursive;
   font-size: 2.5rem;
@@ -25,8 +29,13 @@
 .menu__title,
 .subscribe__title {
   font-family: "Dancing Script", "cursive", Helvetica, Arial, sans-serif;
-  font-size: 70px;
-  line-height: 70px;
+  /* font-size: 70px;
+  line-height: 70px; */
+}
+
+.menu__title,
+.subscribe__title {
+  @apply text-5xl sm:text-7xl leading-10;
 }
 
 .menu__img {
@@ -38,5 +47,13 @@
 }
 
 .main__content {
-  @apply max-w-7xl mx-auto px-14 lg:px-16;
+  @apply max-w-7xl mx-auto px-4 xs:px-6 sm:px-16 md:px-24;
+}
+
+.mobile__nav__menu {
+  background: #0402029c;
+}
+
+.dish__content {
+  background: #80808029;
 }

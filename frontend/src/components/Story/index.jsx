@@ -2,16 +2,18 @@ import React from "react";
 import whyUs from "../../assets/images/s2.png";
 const Story = () => {
   return (
-    <section className="story-container mt-14 mb-20 py-8" id="story">
+    <section className="story-container  mb-20 py-8" id="story">
       <div className="grid lg:grid-cols-2 gap-6">
-        <div className="flex flex-col items-center">
-          <h1 className="font-semibold text-4xl  text-red-600">Our Story</h1>
-          <p className="py-12 text-gray-500">
+        <div className="flex flex-col uppercase items-center">
+          <h1 className="font-semibold text-3xl sm:text-4xl  mt-2 text-red-600">
+            Our Story
+          </h1>
+          <p className="py-12 text-[15px] sm:text-base text-gray-500 mt-4">
             We combine taste and quality to serve you a delightful array of
             mouthwatering dishes, crafted with passion and made to perfection.
           </p>
 
-          <ul className="grid w-full gap-5 grid-cols-2 text-gray-500">
+          <ul className="grid  w-full gap-5 grid-cols-2 text-gray-500">
             <li>Fresh Food</li>
             <li>Prmium Services</li>
             <li>Lorem Ipsum Dolor</li>

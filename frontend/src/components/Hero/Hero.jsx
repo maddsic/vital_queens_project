@@ -9,20 +9,7 @@ import "./hero.css";
 const Hero = () => {
   const [currentState, setCurrentState] = useState(0);
 
-  //   const timer = () => {
-  //     const time = setTimeout(() => {
-  //       if (currentState === 3) {
-  //         setCurrentState(0);
-  //       } else {
-  //         setCurrentState(currentState + 1);
-  //       }
-  //     }, 10000);
-  //     return () => clearTimeout(time);
-  //   };
-
   useEffect(() => {
-    //  timer();
-
     const time = setTimeout(() => {
       if (currentState === 3) {
         setCurrentState(0);
@@ -45,7 +32,7 @@ const Hero = () => {
   return (
     <div className="h-screen relative" id="home">
       <motion.div style={bgImageStyle} />
-      <div className="transparent_bg w-full h-screen absolute z-40 top-0 left-0"></div>
+      <div className="transparent_bg w-full h-screen absolute z-30 top-0 left-0"></div>
 
       <motion.div
         initial={{ x: -1000 }}
