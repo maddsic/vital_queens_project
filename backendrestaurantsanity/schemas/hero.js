@@ -1,22 +1,23 @@
 export default {
-  name: 'services',
-  title: 'Service',
+  name: 'hero',
+  title: 'Hero',
   type: 'document',
   fields: [
     {
-      name: 'name',
-      title: 'Name',
+      name: 'headerTitle',
+      title: 'HeaderTitle',
       type: 'string',
     },
     {
-      name: 'description',
-      title: 'Description',
+      name: 'headerSubTitle',
+      title: 'HeaderSubTitle',
       type: 'string',
     },
     {
       name: 'imgUrl',
       title: 'ImgUrl',
       type: 'image',
+      // of: [{type: 'image'}],
       options: {
         hotspot: true,
       },

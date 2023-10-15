@@ -1,17 +1,22 @@
 export default {
-  name: 'services',
-  title: 'Service',
+  name: 'dish',
+  title: 'Dish',
   type: 'document',
   fields: [
     {
       name: 'name',
-      title: 'Name',
+      title: 'DishName',
       type: 'string',
     },
     {
       name: 'description',
-      title: 'Description',
+      title: 'DishDesc',
       type: 'string',
+    },
+    {
+      name: 'price',
+      title: 'Price',
+      type: 'number',
     },
     {
       name: 'imgUrl',
