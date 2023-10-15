@@ -1,17 +1,23 @@
 export default {
-  name: 'services',
-  title: 'Service',
+  name: 'menuHighlight',
+  title: 'MenuHighlight',
   type: 'document',
   fields: [
     {
       name: 'name',
-      title: 'Name',
+      title: 'HeadText',
       type: 'string',
     },
     {
       name: 'description',
-      title: 'Description',
+      title: 'HeadSubText',
       type: 'string',
+    },
+    {
+      name: 'menus',
+      title: 'Menus',
+      type: 'array',
+      of: [{type: 'string'}],
     },
     {
       name: 'imgUrl',
