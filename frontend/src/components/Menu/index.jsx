@@ -8,7 +8,7 @@ const Menu = () => {
    const [menu, setMenu] = useState([]);
    const [loading, setLoading] = useState(false);
    const ref = useRef(null);
-   const isInView = useInView(ref, { once: true, amount: 0.5 });
+   const isInView = useInView(ref, { once: true });
    const mainControls = useAnimation();
 
    const checkIsInView = () => {
@@ -26,6 +26,11 @@ const Menu = () => {
       getMenuData();
    }, []);
 
+   const menuVariants = {
+      hidden: { opacity: 0, y: 75 },
+      visible: { opacity: 1, y: 0 },
+   };
+
    //  Getting data from backend Sanity
    const getMenuData = async () => {
       const query = '*[_type == "menu"]';
@@ -41,10 +46,6 @@ const Menu = () => {
       }
    };
 
-   const menuVariants = {
-      hidden: { opacity: 0, y: 75 },
-      visible: { opacity: 1, y: 0 },
-   };
    return (
       <section
          ref={ref}

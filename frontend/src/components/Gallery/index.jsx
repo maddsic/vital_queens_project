@@ -6,17 +6,23 @@ const Gallery = () => {
    const [galary, setGalary] = useState([]);
    const [loading, setLoading] = useState(false);
    const ref = useRef(null);
-   const isInView = useInView(ref, { once: true, amount: 0.5 });
+   const isInView = useInView(ref, { once: true, amount: 0.09 });
    const mainControls = useAnimation();
 
-   useEffect(() => {
-      checkIsInView();
-   }, [isInView]);
+   const checkIsInView = () => {
+      if (isInView) {
+         console.log("galary Is In View");
+         mainControls.start("visible");
+      }
+   };
 
    useEffect(() => {
       getGalaryData();
    }, []);
 
+   useEffect(() => {
+      checkIsInView();
+   }, [isInView]);
    //  Getting data from backend Sanity
    const getGalaryData = async () => {
       const query = '*[_type == "galary"]';
@@ -31,13 +37,6 @@ const Gallery = () => {
          });
       } catch (error) {
          console.log("Whoops something went wrong", error);
-      }
-   };
-
-   const checkIsInView = () => {
-      console.log("galary Is In View");
-      if (isInView) {
-         mainControls.start("visible");
       }
    };
 

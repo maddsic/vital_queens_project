@@ -6,11 +6,11 @@ const Dishes = () => {
    const [dish, setDish] = useState([]);
    const [loading, setLoading] = useState(false);
    const ref = useRef(null);
-   const isInView = useInView(ref, { once: true, amount: 0.5 });
+   const isInView = useInView(ref, { once: true, amount: 0.09 });
    const mainControls = useAnimation();
 
    const checkIsInView = () => {
-      // console.log("Is In View");
+      console.log("hihihihihi");
       if (isInView) {
          mainControls.start("visible");
       }
