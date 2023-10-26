@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { images } from "../../constants";
+import { urlFor } from "../../client";
 // const containerVariants = {
 //    hidden: {
 //       opacity: 0,
@@ -15,10 +17,7 @@ const Logo = () => {
          transition={{ delay: 2, duration: 2, type: "spring" }}
          className="flex flex-1 gap-2"
       >
-         <h1 className="cursor-pointer text-red-700">
-            <span className="text-3xl">Q</span>ueen{" "}
-            <span className="text-3xl">V</span>ital
-         </h1>
+         <img src={urlFor(images.vitallogo)} alt="Site Logo" />
       </motion.div>
    );
 };
