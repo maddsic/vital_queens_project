@@ -12,8 +12,8 @@ const Services = () => {
    const slideControls = useAnimation();
 
    const checkIsInView = () => {
-      // console.log("Is In View");
       if (isInView) {
+         console.log("Service Is In View");
          mainControls.start("visible");
          slideControls.start("visible");
       }
