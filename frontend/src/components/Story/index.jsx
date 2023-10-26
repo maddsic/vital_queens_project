@@ -1,9 +1,27 @@
-import React, { useEffect, useState } from "react";
-import whyUs from "../../assets/images/s2.png";
+import React, { useEffect, useState, useRef } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
+
+// import whyUs from "../../assets/images/s2.png";
 import { client, urlFor } from "../../client";
 const Story = () => {
    const [abouts, setAbout] = useState([]);
    const [loading, setLoading] = useState(false);
+   const ref = useRef(null);
+   const isInView = useInView(ref, { once: true });
+   const mainControls = useAnimation();
+   const slideControls = useAnimation();
+
+   const checkIsInView = () => {
+      // console.log("Is In View");
+      if (isInView) {
+         mainControls.start("visible");
+         slideControls.start("visible");
+      }
+   };
+
+   useEffect(() => {
+      checkIsInView();
+   }, [isInView]);
 
    useEffect(() => {
       getAboutData();
@@ -25,8 +43,21 @@ const Story = () => {
       }
    };
    return (
-      <section className="story-container  mb-20 py-8" id="story">
-         <div className="grid lg:grid-cols-2 gap-6">
+      <section
+         ref={ref}
+         className="story-container  mb-20 py-8 relative overflow-hidden"
+         id="story"
+      >
+         <motion.div
+            variants={{
+               hidden: { opacity: 0, y: 75 },
+               visible: { opacity: 1, y: 0 },
+            }}
+            initial="hidden"
+            animate={mainControls}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="grid lg:grid-cols-2 gap-6"
+         >
             {abouts.map((item, itemIndex) => (
                <div
                   className="flex flex-col uppercase items-center"
@@ -56,7 +87,17 @@ const Story = () => {
                   />
                ))}
             </div>
-         </div>
+         </motion.div>
+         <motion.div
+            variants={{
+               hidden: { right: 0 },
+               visible: { right: "100%" },
+            }}
+            initial="hidden"
+            animate={slideControls}
+            transition={{ duration: 0.5, ease: "easeIn" }}
+            className="absolute top-4 bottom-4 left-0 right-0 bg-red-700"
+         ></motion.div>
       </section>
    );
 };

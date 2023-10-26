@@ -1,10 +1,27 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState, useRef } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
 import { client, urlFor } from "../../client";
+import SlideAnimate from "../SlideAnimate";
 
 const Services = () => {
    const [services, setServices] = useState([]);
    const [loading, setLoading] = useState(false);
+   const ref = useRef(null);
+   const isInView = useInView(ref, { once: true, amount: 0.5 });
+   const mainControls = useAnimation();
+   const slideControls = useAnimation();
+
+   const checkIsInView = () => {
+      // console.log("Is In View");
+      if (isInView) {
+         mainControls.start("visible");
+         slideControls.start("visible");
+      }
+   };
+
+   useEffect(() => {
+      checkIsInView();
+   }, [isInView]);
 
    useEffect(() => {
       getServicesData();
@@ -26,11 +43,25 @@ const Services = () => {
       }
    };
    return (
-      <section className="services-container  py-16 mt-10" id="service">
-         <div className="grid md:grid-cols-3  gap-10 justify-center items-center">
+      <section
+         ref={ref}
+         className="services-container py-16 mt-10 relative overflow-hidden"
+         id="service"
+      >
+         <motion.div
+            variants={{
+               hidden: { opacity: 0, y: 75 },
+               visible: { opacity: 1, y: 0 },
+            }}
+            initial="hidden"
+            animate={mainControls}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="grid md:grid-cols-3 gap-10 justify-center items-center"
+         >
             {services.map((service, serviceIndex) => (
                <motion.div
                   // className="box"
+                  whileHover={{ scale: 1.1 }}
                   initial={{ opacity: 0, scale: 0.5 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{
@@ -56,7 +87,19 @@ const Services = () => {
                   </>
                </motion.div>
             ))}
-         </div>
+         </motion.div>
+         {/* <SlideAnimate props={slideControls} /> */}
+
+         <motion.div
+            variants={{
+               hidden: { left: 0 },
+               visible: { left: "100%" },
+            }}
+            initial="hidden"
+            animate={slideControls}
+            transition={{ duration: 0.5, ease: "easeIn" }}
+            className="absolute top-4 bottom-4 left-0 right-0 bg-red-700"
+         ></motion.div>
       </section>
    );
 };

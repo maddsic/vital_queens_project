@@ -58,11 +58,11 @@ const Hero = () => {
          <motion.div
             initial={{ x: -1500 }}
             animate={{ x: 0 }}
-            transition={{ delay: 2, duration: 3.5, type: "spring" }}
+            transition={{ delay: 1, duration: 3.5, type: "spring" }}
             className="description w-full absolute top-0 z-50 flex flex-col justify-center h-full items-center text-blue-100  bg-gradient-to-t from-bg-gray-900 to-red-700"
          >
             <div className="xs:px-6 sm:px-12 md:px-16 lg:px-0 max-w-4xl mt-4">
-               <h1 className=" text-white text-3xl md:text-6xl font-bold mb-10">
+               <h1 className=" text-white text-5xl md:text-6xl font-bold mb-10">
                   {imagesSlide[currentState]?.headerTitle}
                </h1>
                <motion.p

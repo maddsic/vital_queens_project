@@ -1,10 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { items } from "../../constants/items";
-import { motion } from "framer-motion";
+import React, { useEffect, useState, useRef } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
 import { client, urlFor } from "../../client";
+
 const Dishes = () => {
    const [dish, setDish] = useState([]);
    const [loading, setLoading] = useState(false);
+   const ref = useRef(null);
+   const isInView = useInView(ref, { once: true, amount: 0.5 });
+   const mainControls = useAnimation();
+
+   const checkIsInView = () => {
+      // console.log("Is In View");
+      if (isInView) {
+         mainControls.start("visible");
+      }
+   };
+
+   useEffect(() => {
+      checkIsInView();
+   }, [isInView]);
 
    useEffect(() => {
       getDishData();
@@ -18,32 +32,42 @@ const Dishes = () => {
          setLoading(true);
          await client.fetch(query).then(response => {
             setDish(response);
-            console.log(response);
             setLoading(false);
          });
       } catch (error) {
          console.log("Whoops something went wrong", error);
       }
    };
+
+   const dishVariants = {
+      hidden: { opacity: 0, y: 75 },
+      visible: { opacity: 1, y: 0 },
+   };
+
    return (
-      <section className="dishes-container ">
-         <div className=" mt-14">
-            <h1 className="font-semibold text-4xl  text-center uppercase text-red-600  py-1">
+      <section ref={ref} className="dishes-container">
+         <div className="mt-14">
+            <h1 className="font-semibold font-dancing text-4xl  text-center uppercase text-red-600 py-1">
                Our Dishes{" "}
             </h1>
             <div className="dish__content pb-16  flex justify-center flex-wrap gap-4 xs:gap-5 sm:gap-7 w-full pt-10 mt-14">
                {dish.map(({ imgUrl, name, price, description }, dishIndex) => (
                   <motion.div
-                     whileInView={{ opacity: 1 }}
-                     whileHover={{ scale: 1.1 }}
-                     transition={{ duration: 0.5, type: "Inertia" }}
+                     variants={dishVariants}
+                     initial="hidden"
+                     animate={mainControls}
+                     transition={{
+                        duration: 0.5,
+                        delay: dishIndex * 0.3,
+                        stiffness: 200,
+                     }}
                      key={dishIndex}
                      className="w-full xs:w-[250px] sm:w-[260px] shadow-lg relative top-0 mt-5 rounded-md cursor-pointer"
                   >
                      <img
                         src={urlFor(imgUrl)}
                         alt={name}
-                        className="xs:h-[210px] sm:h-52 w-full object-cover  rounded-t-md"
+                        className="xs:h-[210px] sm:h-52 w-full object-cover rounded-t-md"
                      />
                      <div className="price rounded-br-full  rounded-tl-md border-b-[7px] border-red-900 absolute top-0 h-12 w-32 flex items-center justify-center text-center bg-red-600">
                         <p className=" text-white text-lg ">
